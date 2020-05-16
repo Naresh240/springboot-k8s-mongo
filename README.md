@@ -46,9 +46,17 @@ Deploying Mongo with kubectl apply:
     kubectl apply -f mongo-deployment.yml
     kubectl apply -f mongo-service.yml
 
+Give permission for service which is running under same namespace by using rolebinding
+----------------------
+    kubectl create rolebinding default-view \
+      --clusterrole=view \
+      --serviceaccount=default:default \
+      --namespace=default
+      
 Create configmaps for URL which we use in Springboot:
 -------
     kubectl apply -f mongo-config.yml
+    
 Deploy Springboot Application:
 -------------
     kubectl apply -f springboot-deployment.yml
