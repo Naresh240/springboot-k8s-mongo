@@ -86,7 +86,7 @@ Get Methods you can check in web UI:
 Now we can cleanup by using below commands:
 --------
     kubectl delete deploy mongo spring-mongo-service
-    kubectl delete svc mongodb-service mongo spring-mongo-service springboot
+    kubectl delete svc mongodb-service spring-mongo-service
     kubectl delete pv mongo-pv-volume
     kubectl delete pvc mongo-pv-claim
     kubectl delete configmaps mongo-conf
